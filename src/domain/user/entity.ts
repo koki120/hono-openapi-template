@@ -5,12 +5,16 @@ export type UserType = (typeof userTypes)[number];
 
 export type User = {
   id: string;
+  name: string;
   email: string;
   type: UserType;
+  hashedPassword: string;
 };
 
 export const newUser = (): User => ({
-  type: General,
-  email: "",
   id: "",
+  name: "",
+  email: "",
+  type: General,
+  hashedPassword: "",
 });
