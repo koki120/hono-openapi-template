@@ -12,7 +12,11 @@ import {
   updateUserRoute,
   deleteUserRoute,
 } from "@/api/user/router";
-import { UserSearchQueryParser, CreateUserReqParser } from "@/api/user/schema";
+import {
+  UserSearchQueryParser,
+  CreateUserReqParser,
+  UpdateUserReqParser,
+} from "@/api/user/schema";
 
 export const useGetUserForAdminHandler =
   (
@@ -143,7 +147,7 @@ export const useUpdateUserHandler =
     try {
       const param = await c.req.valid("param");
       const body = await c.req.json();
-      const validationRes = CreateUserReqParser.parse(body);
+      const validationRes = UpdateUserReqParser.parse(body);
       // 何らかの処理
       return c.jsonT(
         {

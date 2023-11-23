@@ -47,7 +47,7 @@ app.openapi(deleteUserRoute, deleteUserHandler);
 
 // error handling
 app.onError((err, c) => {
-  console.log(err);
+  console.error(err);
   if (err instanceof HTTPException) {
     return err.getResponse();
   }
