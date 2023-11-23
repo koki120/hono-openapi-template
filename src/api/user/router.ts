@@ -13,7 +13,7 @@ import { JSON_CONTENT_TYPE } from "@api/util/content-types";
 
 export const getUserForAdminRoute = createRoute({
   method: "get",
-  path: "/system-admin/users/{user-id}",
+  path: "/system-admin/users/{id}",
   request: {
     params: UserPathParamsParser,
   },
@@ -47,7 +47,7 @@ export const getMeRoute = createRoute({
 
 export const getUserRoute = createRoute({
   method: "get",
-  path: "/users/{user-id}",
+  path: "/users/{id}",
   request: {
     params: UserPathParamsParser,
   },
@@ -67,7 +67,7 @@ export const searchForUserRoute = createRoute({
   method: "get",
   path: "/users",
   request: {
-    params: UserSearchQueryParser,
+    query: UserSearchQueryParser,
   },
   responses: {
     [StatusCodes.OK]: {
@@ -109,7 +109,7 @@ export const createUserRoute = createRoute({
 
 export const updateUserRoute = createRoute({
   method: "patch",
-  path: "/users/{user-id}",
+  path: "/users/{id}",
   request: {
     params: UserPathParamsParser,
     body: {
@@ -134,7 +134,7 @@ export const updateUserRoute = createRoute({
 
 export const deleteUserRoute = createRoute({
   method: "delete",
-  path: "/users/{user-id}",
+  path: "/users/{id}",
   request: {
     params: UserPathParamsParser,
   },

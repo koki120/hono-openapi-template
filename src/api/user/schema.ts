@@ -8,6 +8,7 @@ export const UserPathParamsParser = z.object({
     .uuid()
     .openapi({
       param: {
+        name: "id",
         in: "path",
       },
     }),
@@ -16,10 +17,9 @@ export const UserPathParamsParser = z.object({
 export const UserSearchQueryParser = z.object({
   query: z.string().openapi({ param: { in: "query" } }),
   type: z.enum(userTypes).openapi({ param: { in: "query" } }),
-  skip: z.number().openapi({ param: { in: "query" } }),
-  limit: z.number().openapi({ param: { in: "query" } }),
+  skip: z.string().openapi({ param: { in: "query" } }),
+  limit: z.string().openapi({ param: { in: "query" } }),
 });
-
 
 export const CreateUserReqParser = z
   .object({

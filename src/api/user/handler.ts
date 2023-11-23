@@ -12,10 +12,7 @@ import {
   searchForUserRoute,
   updateUserRoute,
 } from "@api/user/router";
-import {
-  CreateUserReqParser,
-  UserSearchQueryParser,
-} from "@api/user/schema";
+import { CreateUserReqParser, UserSearchQueryParser } from "@api/user/schema";
 
 export const useGetUserForAdminHandler =
   (
@@ -23,11 +20,11 @@ export const useGetUserForAdminHandler =
     deps: object,
   ): RouteHandler<typeof getUserForAdminRoute> =>
   async (c) => {
-    const userId = c.req.param("user-id");
+    const param = await c.req.valid("param");
     // 何らかの処理
     return c.jsonT(
       {
-        id: userId,
+        id: param.id,
         name: "aaa",
         email: "aaa@example.com",
         type: "admin",
@@ -61,11 +58,10 @@ export const useGetUserHandler =
     deps: object,
   ): RouteHandler<typeof getUserRoute> =>
   async (c) => {
-    const userId = c.req.param("user-id");
-    // 何らかの処理
+    const param = await c.req.valid("param"); // 何らかの処理
     return c.jsonT(
       {
-        id: userId,
+        id: param.id,
         name: "aaa",
         email: "aaa@example.com",
         type: "general",
@@ -145,13 +141,13 @@ export const useUpdateUserHandler =
   ): RouteHandler<typeof updateUserRoute> =>
   async (c) => {
     try {
-      const userId = c.req.param("user-id");
+      const param = await c.req.valid("param");
       const body = await c.req.json();
       const validationRes = CreateUserReqParser.parse(body);
       // 何らかの処理
       return c.jsonT(
         {
-          id: userId,
+          id: param.id,
           name: validationRes.name,
           email: validationRes.email,
           type: validationRes.type,
@@ -174,12 +170,11 @@ export const useDeleteUserHandler =
     deps: object,
   ): RouteHandler<typeof deleteUserRoute> =>
   async (c) => {
-    const userId = c.req.param("user-id");
-
+    const param = await c.req.valid("param");
     // 何らかの処理
     return c.jsonT(
       {
-        id: userId,
+        id: param.id,
         name: "aaa",
         email: "aaa@example.com",
         type: "general",
