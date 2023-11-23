@@ -26,6 +26,6 @@
     "prettier": "^2.7.1",
     "tsx": "^4.4.0"
   },
-  "name": "bun-devcontanier",
+  "name": "hono-openapi",
   "module": "index.ts"
 }
