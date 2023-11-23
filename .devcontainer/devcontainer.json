@@ -24,11 +24,5 @@
 
 	"runArgs": ["--name", "hono-openapi"],
 
-	"mounts": [
-		"source=hono-openapi,target=${localWorkspaceFolder},type=volume"
-	],
-
-    "postCreateCommand": "curl -fsSL https://bun.sh/install | bash",
-
 	"remoteUser": "vscode"
 }
