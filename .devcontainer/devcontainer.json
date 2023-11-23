@@ -1,8 +1,6 @@
 {
 	"name": "hono-openapi",
-    "build": {
-		"dockerfile": "Dockerfile"
-	},
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:18-bullseye",
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {
 			"installZsh": "true",
