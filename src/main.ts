@@ -1,3 +1,4 @@
+import { serve } from "@hono/node-server";
 import { swaggerUI } from "@hono/swagger-ui";
 import { OpenAPIHono } from "@hono/zod-openapi";
 import { HTTPException } from "hono/http-exception";
@@ -12,6 +13,7 @@ import {
   searchForUserRoute,
   updateUserRoute,
 } from "@api/user/router";
+
 import {
   createUserHandler,
   deleteUserHandler,
@@ -53,4 +55,4 @@ app.onError((err, c) => {
   return c.newResponse(null, StatusCodes.INTERNAL_SERVER_ERROR);
 });
 
-export default app;
+serve(app);
