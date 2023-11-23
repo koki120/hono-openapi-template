@@ -1,0 +1,87 @@
+{
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "audioCues.lineHasError": "off",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports": true,
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.minimap.enabled": false,
+  "editor.quickSuggestions": {
+    "comments": true,
+    "other": true,
+    "strings": true
+  },
+  "editor.renderWhitespace": "none",
+  "editor.snippetSuggestions": "top",
+  "editor.suggest.preview": true,
+  "editor.suggestSelection": "first",
+  "editor.tabSize": 4,
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+  "eslint.probe": [
+    "html",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "markdown",
+    "typescript",
+    "typescriptreact",
+    "vue"
+  ],
+  // tsconfig.eslint.jsonを自動認識
+  "eslint.workingDirectories": [
+    { "mode": "auto" }
+  ],
+  "explorer.confirmDragAndDrop": false,
+  "files.associations": {
+    "Dockerfile*": "dockerfile"
+  },
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.mypy_cache": true,
+    "**/.project": true,
+    "**/.pytest_cache": true,
+    "**/.settings": true,
+    "**/.venv": true,
+    "**/__pycache__": true
+  },
+  "files.formatOnPaste": true,
+  "files.formatOnSave": true,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "gitlens.hovers.currentLine.over": "line",
+  "javascript.format.semicolons": "insert",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "jupyter.askForKernelRestart": false,
+  "markdown.editor.tabSize": 4,
+  "prettier.requireConfig": true,
+  "search.useIgnoreFiles": false,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.editor.tabSizing": "shrink",
+  "zenMode.hideLineNumbers": false
+}

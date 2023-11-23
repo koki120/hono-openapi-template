@@ -1,0 +1,34 @@
+{
+	"name": "hono-openapi",
+    "build": {
+		"dockerfile": "Dockerfile"
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": "true",
+            "configureZshAsDefaultShell": "true",
+			"upgradePackages": "true"
+		},
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+	},
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode",
+				"streetsidesoftware.code-spell-checker",
+			]
+		}
+	},
+
+	"runArgs": ["--name", "hono-openapi"],
+
+	"mounts": [
+		"source=hono-openapi,target=${localWorkspaceFolder},type=volume"
+	],
+
+    "postCreateCommand": "curl -fsSL https://bun.sh/install | bash",
+
+	"remoteUser": "vscode"
+}
