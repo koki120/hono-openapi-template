@@ -115,27 +115,18 @@ export const useCreateUserHandler =
     deps: object,
   ): RouteHandler<typeof createUserRoute> =>
   async (c) => {
-    try {
-      const body = await c.req.json();
-      const validationRes = CreateUserReqParser.parse(body);
-      // 何らかの処理
-      return c.jsonT(
-        {
-          id: "aaa",
-          name: validationRes.name,
-          email: validationRes.email,
-          type: validationRes.type,
-        },
-        StatusCodes.CREATED,
-      );
-    } catch (e: unknown) {
-      if (e instanceof z.ZodError) {
-        throw new HTTPException(StatusCodes.BAD_REQUEST, {
-          message: e.message,
-        });
-      }
-      throw e;
-    }
+    const body = await c.req.json();
+    const validationRes = CreateUserReqParser.parse(body);
+    // 何らかの処理
+    return c.jsonT(
+      {
+        id: "aaa",
+        name: validationRes.name,
+        email: validationRes.email,
+        type: validationRes.type,
+      },
+      StatusCodes.CREATED,
+    );
   };
 
 export const useUpdateUserHandler =
@@ -144,28 +135,19 @@ export const useUpdateUserHandler =
     deps: object,
   ): RouteHandler<typeof updateUserRoute> =>
   async (c) => {
-    try {
-      const param = await c.req.valid("param");
-      const body = await c.req.json();
-      const validationRes = UpdateUserReqParser.parse(body);
-      // 何らかの処理
-      return c.jsonT(
-        {
-          id: param.id,
-          name: validationRes.name,
-          email: validationRes.email,
-          type: validationRes.type,
-        },
-        StatusCodes.OK,
-      );
-    } catch (e: unknown) {
-      if (e instanceof z.ZodError) {
-        throw new HTTPException(StatusCodes.BAD_REQUEST, {
-          message: e.message,
-        });
-      }
-      throw e;
-    }
+    const param = await c.req.valid("param");
+    const body = await c.req.json();
+    const validationRes = UpdateUserReqParser.parse(body);
+    // 何らかの処理
+    return c.jsonT(
+      {
+        id: param.id,
+        name: validationRes.name,
+        email: validationRes.email,
+        type: validationRes.type,
+      },
+      StatusCodes.OK,
+    );
   };
 
 export const useDeleteUserHandler =
