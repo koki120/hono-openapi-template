@@ -1,6 +1,6 @@
-import { z } from "@hono/zod-openapi";
+import { z } from "zod";
 
-import { userTypes } from "@domain/user/entity";
+import { userTypes } from "@/domain/user/entity";
 
 export const UserPathParamsParser = z.object({
   id: z

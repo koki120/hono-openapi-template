@@ -8,8 +8,8 @@ import {
   UsersResParser,
   CreateUserReqParser,
   UpdateUserReqParser,
-} from "@api/user/schema";
-import { JSON_CONTENT_TYPE } from "@api/util/content-types";
+} from "@/api/user/schema";
+import { JSON_CONTENT_TYPE } from "@/api/util/content-types";
 
 export const getUserForAdminRoute = createRoute({
   method: "get",

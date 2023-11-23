@@ -1,18 +1,18 @@
 import { RouteHandler } from "@hono/zod-openapi";
 import { HTTPException } from "hono/http-exception";
 import { StatusCodes } from "http-status-codes";
-import z from "zod";
+import { z } from "zod";
 
 import {
-  createUserRoute,
-  deleteUserRoute,
-  getMeRoute,
   getUserForAdminRoute,
+  getMeRoute,
   getUserRoute,
   searchForUserRoute,
+  createUserRoute,
   updateUserRoute,
-} from "@api/user/router";
-import { CreateUserReqParser, UserSearchQueryParser } from "@api/user/schema";
+  deleteUserRoute,
+} from "@/api/user/router";
+import { UserSearchQueryParser, CreateUserReqParser } from "@/api/user/schema";
 
 export const useGetUserForAdminHandler =
   (

@@ -6,7 +6,7 @@ import {
   useCreateUserHandler,
   useUpdateUserHandler,
   useDeleteUserHandler,
-} from "@api/user/handler";
+} from "@/api/user/handler";
 
 export const getUserForAdminHandler = useGetUserForAdminHandler({});
 export const getMeHandler = useGetMeHandler({});

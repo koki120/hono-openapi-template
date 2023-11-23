@@ -12,8 +12,7 @@ import {
   getUserRoute,
   searchForUserRoute,
   updateUserRoute,
-} from "@api/user/router";
-
+} from "@/api/user/router";
 import {
   createUserHandler,
   deleteUserHandler,
@@ -22,7 +21,7 @@ import {
   getUserHandler,
   searchForUserHandler,
   updateUserHandler,
-} from "@injection";
+} from "@/injection";
 
 const app = new OpenAPIHono();
 
